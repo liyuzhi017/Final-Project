@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 900px;height:500px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+	var size = 80;
+	var size1 = 50;
+	var yy = 200;
+	var yy1 = 250;
+	var option = {
+    	    title: {
+            text: "《让子弹飞》人物关系分析",
+            top: "top",
+            left: "left",
+            textStyle: {
+                color: '#668B8B'
+            }
+        },
+        tooltip: {
+            formatter: '{b}'
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                restore: {
+                    show: true
+                },
+                saveAsImage: {
+                    show: true
+                }
+            }
+        },
+        backgroundColor: '# 337ab7',
+        animationDuration: 1000,
+        animationEasingUpdate: 'quinticInOut',
+        series: [{
+            name: '人物关系',
+            type: 'graph',
+            layout: 'force',
+            force: {
+                repulsion: 12,
+                gravity: 0.1,
+                edgeLength: 50,
+                layoutAnimation: true,
+            },
+            data: [{
+                "name": "师爷",
+                x: 0,
+                y: yy,
+                "symbolSize": 88,
+                "category": "师爷",
+                "draggable": "true"
+            }, {
+                "name": "老二",
+                x: 10,
+                y: yy1,
+                "symbolSize": 34,
+                "category": "老二",
+                "draggable": "true"
+
+            }, {
+                "name": "老三",
+                x: 20,
+                y: yy,
+                "symbolSize": 36,
+                "category": "老三",
+                "draggable": "true"
+            }, {
+                x: 30,
+                y: yy1,
+                "name": "黄四郎",
+                "symbolSize": 94,
+                "category": "黄四郎",
+                "draggable": "true"
+            }, {
+                x: 40,
+                y: yy1,
+                "name": "胡万",
+                "symbolSize": 30,
+                "category": "胡万",
+                "draggable": "true"
+	    }, {
+                x: 50,
+                y: yy1,
+                "name": "胡千",
+                "symbolSize": 12,
+                "category": "胡千",
+                "draggable": "true"
+	    }, {
+                x: 60,
+                y: yy1,
+                "name": "武智冲",
+                "symbolSize": 14,
+                "category": "武智冲",
+                "draggable": "true"
+	    }, {
+                x: 70,
+                y: yy1,
+                "name": "杨万楼",
+                "symbolSize": 2,
+                "category": "杨万楼",
+                "draggable": "true"
+	    }, {
+                x: 120,
+                y: yy1,
+                "name": "花姐",
+                "symbolSize": 36,
+                "category": "花姐",
+                "draggable": "true"
+	    }, {
+                x: 130,
+                y: yy1,
+                "name": "老七",
+                "symbolSize": 28,
+                "category": "老七",
+                "draggable": "true"
+	    }, {
+                x: 140,
+                y: yy1,
+                "name": "张麻子",
+                "symbolSize": 60,
+                "category": "张麻子",
+                "draggable": "true"
+	    }, {
+                x: 150,
+                y: yy1,
+                "name": "县长夫人",
+                "symbolSize": 46,
+                "category": "县长夫人",
+                "draggable": "true"
+            }],
+            links: [{
+                "source": "老二",
+                "target": "师爷",
+            }, {
+                "source": "老二",
+                "target": "老三"
+            }, {
+                "source": "老二",
+                "target": "黄四郎"
+            }, {
+                "source": "老二",
+                "target": "花姐"
+            }, {
+                "source": "老二",
+                "target": "张麻子"
+            }, {
+                "source": "师爷",
+                "target": "黄四郎"
+            }, {
+                "source": "师爷",
+                "target": "胡万"
+            }, {
+                "source": "师爷",
+                "target": "花姐"
+            }, {
+                "source": "师爷",
+                "target": "老七"
+            }, {
+                "source": "师爷",
+                "target": "张麻子"
+	    }, {
+                "source": "师爷",
+                "target": "县长夫人"
+	    }, {
+                "source": "老三",
+                "target": "黄四郎"
+	    }, {
+                "source": "老三",
+                "target": "花姐"
+	    }, {
+                "source": "老三",
+                "target": "张麻子"
+	    }, {
+                "source": "小六子",
+                "target": "黄四郎"
+	    }, {
+                "source": "小六子",
+                "target": "张麻子"
+	    }, {
+                "source": "黄四郎",
+                "target": "胡万"
+	    }, {
+                "source": "黄四郎",
+                "target": "武智冲"
+	    }, {
+                "source": "黄四郎",
+                "target": "杨万楼"
+	    }, {
+                "source": "黄四郎",
+                "target": "花姐"
+	    }, {
+                "source": "黄四郎",
+                "target": "老七"
+	    }, {
+                "source": "黄四郎",
+                "target": "张麻子"
+            }, {
+                "source": "黄四郎",
+                "target": "县长夫人"
+	    }, {
+                "source": "胡万",
+                "target": "武智冲"
+	    }, {
+                "source": "胡万",
+                "target": "张麻子"
+	    }, {
+                "source": "胡万",
+                "target": "县长夫人"
+	    }, {
+                "source": "张麻子",
+                "target": "武智冲"
+	    }, {
+                "source": "张麻子",
+                "target": "花姐"
+	    }, {
+                "source": "老七",
+                "target": "师爷"
+	    }, {
+                "source": "张麻子",
+                "target": "老七"
+	    }, {
+                "source": "张麻子",
+                "target": "县长夫人"
+	    }],
+            roam: false,
+            label: {
+                normal: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{b}',
+                    fontSize: 16,
+                    fontStyle: '600',
+                }
+            },
+            lineStyle: {
+                normal: {
+                    width: 4,
+                    color: 'source',
+                    curveness: 0,
+                    type: "solid"
+                }
+            }
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>    

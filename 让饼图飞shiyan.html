@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <!-- 这里是加载刚下好的echarts.min.js，注意路径 -->
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 1000px;height:600px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        var option={
+            backgroundColor: '#2c343c',
+            textStyle: {
+                        color: 'rgba(255, 255, 255, 0.3)'
+                    },
+            series : [
+                {
+                    name: '让子弹飞人物分析',
+                    type: 'pie',
+                    radius: '55%',
+                    data:[
+                        {value:89, name:'师爷'},
+                        {value:17, name:'老二'},
+                        {value:18, name:'老三'},
+                        {value:4, name:'小六子'},
+                        {value:94, name:'黄四郎'},
+			{value:15, name:'胡万'},
+			{value:6, name:'胡千'},
+			{value:7, name:'武智冲'},
+			{value:1, name:'杨万楼'},
+			{value:18, name:'花姐'},
+			{value:14, name:'老七'},
+			{value:52, name:'张麻子'},
+			{value:23, name:'县长夫人'}
+                    ],
+                    roseType: 'angle',
+
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 200,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    },
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: 'rgba(255, 255, 255, 0.3)'
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            lineStyle: {
+                                color: 'rgba(255, 255, 255, 0.3)'
+                            }
+                        }
+                    }
+
+                }
+            ]
+        }
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+    </script>
+</body>
+</html>
